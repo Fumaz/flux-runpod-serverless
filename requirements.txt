@@ -1,0 +1,6 @@
+runpod
+diffusers
+torch
+torchvision
+sentencepiece
+transformers
