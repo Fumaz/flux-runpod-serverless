@@ -13,9 +13,9 @@ RUN apt-get update && apt-get install -y \
 
 COPY requirements.txt .
 
-RUN pip3 install --upgrade pip
-RUN pip3 install --upgrade setuptools
-RUN pip3 install -r requirements.txt
+RUN pip3 install --upgrade pip --no-cache-dir
+RUN pip3 install --upgrade setuptools --no-cache-dir
+RUN pip3 install -r requirements.txt --no-cache-dir
 
 COPY main.py .
 
