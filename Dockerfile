@@ -1,5 +1,8 @@
 FROM nvidia/cuda:12.5.1-cudnn-devel-ubuntu20.04
 
+ENV DEBIAN_FRONTEND=noninteractive
+ENV PYTHONUNBUFFERED=1
+
 RUN apt-get update && apt-get install -y \
     python3.10 \
     python3-pip \
