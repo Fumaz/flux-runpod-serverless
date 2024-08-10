@@ -7,7 +7,7 @@ import torch
 from diffusers import FluxPipeline
 
 pipe = FluxPipeline.from_pretrained(os.environ.get("FLUX_MODEL_NAME", "black-forest-labs/FLUX.1-dev"),
-                                    torch_dtype=torch.bfloat16, cache_dir="/runpod-volume/models")
+                                    torch_dtype=torch.bfloat16, cache_dir=os.environ.get("CACHE_DIR", "/runpod-volume/models"))
 
 
 def handler(job):

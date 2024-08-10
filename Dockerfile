@@ -17,6 +17,7 @@ RUN pip3 install --upgrade pip --no-cache-dir
 RUN pip3 install --upgrade setuptools --no-cache-dir
 RUN pip3 install -r requirements.txt --no-cache-dir
 RUN pip3 install accelerate --no-cache-dir
+RUN pip install --upgrade protobuf --no-cache-dir
 
 COPY main.py .
 
