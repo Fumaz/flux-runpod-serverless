@@ -4,7 +4,6 @@ from io import BytesIO
 
 import runpod
 import torch
-from PIL import Image
 from diffusers import FluxPipeline
 
 pipe = FluxPipeline.from_pretrained(os.environ.get("FLUX_MODEL_NAME", "black-forest-labs/FLUX.1-dev"),
@@ -21,6 +20,10 @@ def handler(job):
     num_inference_steps = job_input["num_inference_steps"]
     height = job_input["height"]
     width = job_input["width"]
+    fake_run = job_input.get("fake_run", False)
+
+    if fake_run:
+        return {"output": "fake_run"}
 
     # init_image_str = job_input.get("init_image")
     #
